@@ -70,7 +70,7 @@ function App() {
                 </div>
                 <div className="btn_login_box">
                   {/* <button onClick={onSubmit} type='submit'>로그인</button> */}
-                  <a className='btn_login' href='javascript:void(0);' onClick={onSubmit}>로그인하기</a>
+                  <a className='btn_login' href='https://didgpals.github.io/argosassignmentbook/sub/main/main.html;' onClick={onSubmit}>로그인하기</a>
                 </div>
               </fieldset>
             </form>
