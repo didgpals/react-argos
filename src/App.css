@@ -1,0 +1,596 @@
+#root {
+  max-width: 768px;
+  margin: 0 auto;
+}
+/* Global */
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+/* Wrap */
+#wrap {
+  position: relative;
+  max-width: 768px;
+  margin: 0 auto;
+}
+/* Header */
+#header {
+  position: fixed;
+  top: 0;
+  max-width: 768px;
+  width: 100%;
+}
+
+#header .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  background: #f5f5f5;
+  padding: 0 12px;
+}
+
+#header .toolbar span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+#header .toolbar .tool_icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#header .status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+  background: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--stroke-dd);
+}
+
+/* 그냥 상태바면 display없애기 */
+#header .s_none {
+  display: none;
+}
+
+/* 화살표 있는 상태바면 display없애기 */
+#header .s_arrow {
+  display: none;
+  justify-content: flex-start;
+}
+
+#header .arrow {
+  width: 16px;
+  height: 16px;
+  background: url(../img/common/ico_back.svg) no-repeat center / cover;
+}
+
+#header .s_arrow .title {
+  margin-left: calc(50% - 16px);
+  transform: translateX(-50%);
+}
+
+/* main */
+#main {
+  /* 만약에 status바가 있다면 margin-top:68px로 변경 해주세요 */
+  margin-top: 24px;
+  margin-bottom: 112px;
+}
+legend {
+  display: none;
+}
+
+.login input[type="text"],
+input[type="password"],
+.icon_search {
+  width: 100%;
+  padding: 18px 16px 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--stroke-dd);
+  border-radius: 8px;
+  outline: none;
+}
+.login input::placeholder {
+  font-size: 1.6rem;
+}
+.checkbox_box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.checkbox_box label {
+  font-size: 1.6rem;
+}
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  appearance: none;
+  background: url(../public/main/iconCheck.png) no-repeat center;
+}
+input[type="checkbox"]:checked {
+  background: url(../public/main/iconCheck_Check.png) no-repeat center;
+}
+.icon_search {
+  font-size: 1.6rem;
+  text-align: left;
+  color: var(--gray-66);
+  background: url(../public/main/ico_search.png) no-repeat center right 16px;
+}
+
+.icon_eye {
+  background: url(../public/main/ico_visibility.png) no-repeat center right 16px;
+}
+
+.btn_login {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+  transform: translateX(-50%);
+  max-width: 608px;
+  width: 90%;
+  background: var(--main-color);
+  border-radius: 8px;
+  padding: 18px 0 16px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.btn_login:focus {
+  color: white;
+}
+.btn_login:link {
+  color: white;
+}
+
+#navigation {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  max-width: 768px;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid var(--stroke-dd);
+}
+
+#navigation .app_nav {
+  display: flex;
+  justify-content: center;
+  gap: 54px;
+  height: 64px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#navigation .app_nav p {
+  font-size: 1.4rem;
+  color: #333;
+  word-break: keep-all;
+}
+
+#navigation .nav {
+  display: flex;
+  justify-content: center;
+  height: 48px;
+  gap: 84px;
+  padding: 16px 73px;
+  background: #f5f5f5;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+}
+
+@media (min-width: 768px) {
+  #header .status {
+    height: 74px;
+    font-size: 2.4rem;
+  }
+
+  #header .arrow {
+    width: 24px;
+    height: 24px;
+    background: url(../img/common/ico_back.svg) no-repeat center / cover;
+  }
+
+  #main {
+    /* 만약에 status바가 있다면 margin-top:98px로 변경 해주세요 */
+    margin-top: 24px;
+  }
+
+  #navigation .app_nav {
+    gap: 84px;
+  }
+}
+
+/* 로그인화면 */
+#login .login {
+  padding: 84px 20px 0;
+  text-align: center;
+  background: #fff;
+}
+
+#login .login img {
+  width: 84px;
+  margin-bottom: 20px;
+}
+
+#login .login p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#login .login h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.text-box input {
+  width: 100%;
+  padding: 18px 16px 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--stroke-dd);
+  border-radius: 8px;
+  font-size: 1.6rem;
+  outline: none;
+}
+.text-box :focus {
+  border: 1px solid var(--main-color);
+  outline: normal;
+}
+
+.text-box:nth-of-type(1) input::placeholder {
+  background: url(../img/main/ico_search.png) no-repeat top 5px right;
+}
+
+.text-box:nth-of-type(3) input::placeholder {
+  background: url(../img/main/ico_visibility.png) no-repeat top 5px right;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-button {
+  width: 100%;
+  height: 48px;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 64px;
+  width: 90%;
+  max-width: 768px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gray-66);
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gray-99);
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  background-color: #fff;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.custom-checkbox::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
+}
+
+/* 모달창 */
+.modal {
+  position: fixed;
+  max-width: 768px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dimmd {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 768px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.container {
+  position: fixed;
+  bottom: 64px;
+  width: 100%;
+  height: 652px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--stroke-ee);
+  position: absolute;
+  bottom: 0;
+
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--stroke-ee);
+}
+
+.search-bar {
+  display: flex;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--stroke-ee);
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 18px 16px 16px;
+  border: 1px solid var(--stroke-dd);
+  border-radius: 8px;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+.search-bar :focus {
+  border: 1px solid var(--main-color);
+}
+
+.search-bar input::placeholder {
+  background: url(../img/main/ico_search.png) no-repeat top 5px right;
+}
+
+.facility-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--stroke-ee);
+}
+
+.facility-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.facility-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.facility-address {
+  font-size: 1.4rem;
+  color: var(--gray-66);
+  font-weight: 400;
+}
+
+.select-button {
+  padding: 3px 20px 5px;
+  background-color: #fff;
+  border: 1px solid var(--stroke-dd);
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--gray-99);
+}
+.select-button.active {
+  padding: 3px 20px 5px;
+  background-color: var(--main-color);
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #fff;
+}
+button {
+  outline: none;
+}
+.btn_login_box {
+  position: relative;
+  bottom: -100px;
+  width: 100%;
+  max-width: 768px;
+}
+.complete-button {
+  width: calc(100% - 32px);
+  height: 48px;
+  margin: 16px;
+  padding: 10px 0 18px;
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.btn_login {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  max-width: 768px;
+  width: 100%;
+  background: var(--main-color);
+  border-radius: 8px;
+  padding: 18px 0 16px;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 768px) {
+  #login .login {
+    padding: 104px 80px 0;
+  }
+
+  #login .login img {
+    width: 110px;
+    margin-bottom: 12px;
+  }
+
+  #login .login p {
+    font-size: 2.2rem;
+    margin-top: 12px;
+  }
+
+  #login .login h2 {
+    font-size: 4.4rem;
+    margin-top: -2px;
+  }
+
+  .text-box input {
+    padding: 28px 26px 26px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    font-size: 2rem;
+  }
+
+  .text-box:nth-of-type(1) input::placeholder {
+    background: url(../img/main/ico_search.png) no-repeat top 5px right / 24px;
+  }
+
+  .text-box:nth-of-type(3) input::placeholder {
+    background: url(../img/main/ico_visibility.png) no-repeat top 5px right /
+      24px;
+  }
+
+  .custom-checkbox {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+  }
+
+  .custom-checkbox::after {
+    width: 5px;
+    height: 15px;
+    left: 8px;
+  }
+
+  .login-button {
+    height: 76px;
+    padding: 18px 0 28px;
+    border-radius: 16px;
+    font-size: 2.8rem;
+    width: 80%;
+  }
+
+  /*모달창*/
+
+  .container {
+    width: 616px;
+    height: 800px;
+    border-radius: 32px 32px 0 0;
+    margin-left: 76px;
+  }
+
+  .header {
+    padding: 28px;
+    font-size: 2.2rem;
+  }
+
+  .header img {
+    width: 22px;
+  }
+
+  .search-bar {
+    padding: 14px 28px;
+  }
+
+  .search-bar input {
+    padding: 20px 24px 22px;
+    border-radius: 16px;
+    font-size: 2.2rem;
+  }
+
+  .search-bar input::placeholder {
+    background: url(../img/main/ico_search.png) no-repeat top 5px right / 24px;
+  }
+
+  .facility-item {
+    padding: 16px 24px;
+  }
+
+  .facility-name {
+    font-size: 2rem;
+  }
+
+  .facility-address {
+    font-size: 1.6rem;
+  }
+
+  .select-button {
+    padding: 8px 30px 10px;
+    font-size: 2rem;
+  }
+  .select-button.active {
+    padding: 8px 30px 10px;
+    font-size: 2rem;
+  }
+  .complete-button {
+    width: 95%;
+    height: 76px;
+    padding: 18px 0 28px;
+    border-radius: 16px;
+    font-size: 2.8rem;
+  }
+}
