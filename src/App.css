@@ -476,6 +476,7 @@ button {
   padding: 18px 0 16px;
   color: #fff;
   font-size: 1.8rem;
+  border: 0;
 }
 .btn_login:link {
   color: white;
