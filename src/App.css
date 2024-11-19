@@ -477,7 +477,15 @@ button {
   color: #fff;
   font-size: 1.8rem;
 }
-
+.btn_login:link {
+  color: white;
+}
+.btn_login:visited {
+  color: white;
+}
+.btn_login:active {
+  color: white;
+}
 @media (min-width: 768px) {
   #login .login {
     padding: 104px 80px 0;

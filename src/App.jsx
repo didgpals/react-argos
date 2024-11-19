@@ -27,7 +27,7 @@ function App() {
   const onSubmit = () => {
     if (userID === "김보호" && userPW === "1234") {
       // alert("로그인 성공!");
-      location.href = "sub/sub/login.html";
+      location.href = "https://didgpals.github.io/argosassignmentbook/sub/main/main.html";
     } else {
       alert("아이디 또는 비밀번호를 확인해 주세요!");
     }
@@ -70,7 +70,7 @@ function App() {
                 </div>
                 <div className="btn_login_box">
                   {/* <button onClick={onSubmit} type='submit'>로그인</button> */}
-                  <a className='btn_login' href='https://didgpals.github.io/argosassignmentbook/sub/main/main.html' onClick={onSubmit}>로그인하기</a>
+                  <button type="button" className='btn_login' onClick={onSubmit}>로그인하기</button>
                 </div>
               </fieldset>
             </form>
